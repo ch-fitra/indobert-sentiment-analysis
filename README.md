@@ -18,34 +18,6 @@ Fine-tuning model \*\*IndoBERT\*\* untuk klasifikasi sentimen teks Bahasa Indone
 
 
 
-\### 1. Setup environment
-
-
-
-```bash
-
-python -m venv venv
-
-venv\\Scripts\\activate          # Windows
-
-\# source venv/bin/activate     # Mac/Linux
-
-
-
-\# Install PyTorch (sesuaikan CUDA version, lihat https://pytorch.org/get-started/locally/)
-
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
-
-
-
-\# Install dependency lainnya
-
-pip install -r requirements.txt
-
-```
-
-
-
 \## 📊 Hasil
 
 
@@ -75,4 +47,130 @@ pip install -r requirements.txt
 
 
 \## 📁 Struktur Project
+
+.
+
+
+
+├── load\_data.py      # Download \& siapkan dataset dari GitHub IndoNLU
+
+
+
+├── train.py           # Fine-tuning IndoBERT
+
+
+
+├── inference.py        # Test model dengan kalimat custom
+
+
+
+├── check\_gpu.py        # Verifikasi GPU/CUDA terdeteksi
+
+
+
+├── requirements.txt    # Dependencies
+
+
+
+└── README.md
+
+
+
+\## 🚀 Cara Menjalankan
+
+
+
+\### 1. Setup environment
+
+
+
+```bash
+
+python -m venv venv
+
+venv\\Scripts\\activate          # Windows
+
+\# source venv/bin/activate     # Mac/Linux
+
+
+
+\# Install PyTorch (sesuaikan CUDA version, lihat https://pytorch.org/get-started/locally/)
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+
+
+\# Install dependency lainnya
+
+pip install -r requirements.txt
+
+```
+
+
+
+\### 2. Download \& siapkan dataset
+
+
+
+```bash
+
+python load\_data.py
+
+```
+
+
+
+\### 3. Training model
+
+
+
+```bash
+
+python train.py
+
+```
+
+
+
+\### 4. Test inference
+
+
+
+```bash
+
+python inference.py
+
+```
+
+
+
+\## 📈 Detail Pendekatan
+
+
+
+\- \*\*Mixed precision training (fp16)\*\* untuk mempercepat training di GPU
+
+\- \*\*F1-macro\*\* dipakai sebagai metrik utama (bukan hanya accuracy) karena dataset imbalanced (58% positive, 31% negative, 10% neutral)
+
+\- Model checkpoint terbaik dipilih otomatis berdasarkan F1-macro tertinggi di validation set
+
+
+
+\## ⚠️ Known Limitations
+
+
+
+\- Performa lebih rendah pada kelas \*\*neutral\*\* akibat data imbalance (hanya \~10% dari total data training)
+
+\- Kalimat faktual netral (tanpa opini) kadang salah diklasifikasikan sebagai positive/negative
+
+
+
+\## 📜 Lisensi
+
+
+
+Project ini menggunakan \[MIT License](LICENSE).
+
+Dataset SmSA berasal dari \[IndoNLU](https://github.com/IndoNLP/indonlu). Model base dari \[IndoBenchmark](https://huggingface.co/indobenchmark).
 
