@@ -2,6 +2,18 @@
 
 
 
+!\[Python](https://img.shields.io/badge/Python-3.14-blue?logo=python\&logoColor=white)
+
+!\[PyTorch](https://img.shields.io/badge/PyTorch-2.11-EE4C2C?logo=pytorch\&logoColor=white)
+
+!\[Transformers](https://img.shields.io/badge/🤗%20Transformers-5.12-yellow)
+
+!\[License](https://img.shields.io/badge/License-MIT-green)
+
+!\[Accuracy](https://img.shields.io/badge/Accuracy-91.2%25-success)
+
+
+
 Fine-tuning model \*\*IndoBERT\*\* untuk klasifikasi sentimen teks Bahasa Indonesia (positif/netral/negatif), menggunakan PyTorch dan Hugging Face Transformers.
 
 
