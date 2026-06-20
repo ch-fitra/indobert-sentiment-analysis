@@ -6,6 +6,34 @@ Fine-tuning model \*\*IndoBERT\*\* untuk klasifikasi sentimen teks Bahasa Indone
 
 
 
+\### 1. Setup environment
+
+
+
+```bash
+
+python -m venv venv
+
+venv\\Scripts\\activate          # Windows
+
+\# source venv/bin/activate     # Mac/Linux
+
+
+
+\# Install PyTorch (sesuaikan CUDA version, lihat https://pytorch.org/get-started/locally/)
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+
+
+\# Install dependency lainnya
+
+pip install -r requirements.txt
+
+```
+
+
+
 \## 📊 Hasil
 
 
