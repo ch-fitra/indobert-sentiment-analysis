@@ -166,11 +166,5 @@ python inference.py
 
 
 
-\## 📜 Lisensi
-
-
-
-Project ini menggunakan \[MIT License](LICENSE).
-
 Dataset SmSA berasal dari \[IndoNLU](https://github.com/IndoNLP/indonlu). Model base dari \[IndoBenchmark](https://huggingface.co/indobenchmark).
 
